@@ -5,19 +5,29 @@ import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import Sidebar from "./comps/Sidebar";
-import Dashboard from "./pages/Dashboard";
+import NavBar from "./comps/NavBar";
+import HomePage from "./pages/HomePage";
+import Login from "./pages/Login";
+import About from "./pages/About";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Sidebar/>,
+        element: <NavBar/>,
         children: [
             {
                 path: "/",
-                element: <Dashboard/>
+                element: <HomePage/>
+            }, {
+                path: "/login",
+                element: <Login/>
+            },
+            {
+                path:"/about",
+                element:<About/>
             }
         ],
     },
